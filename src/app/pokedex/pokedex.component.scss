@@ -1,0 +1,40 @@
+.pokedex {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    background-color: red;
+    color: yellow;
+
+    .pokemonCard {
+        width: 70%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: auto;
+            width: 30%;
+        }
+    }
+
+    .pokemonList {
+        width: 30%;
+
+        li {
+            display: flex;
+
+            img {
+                width: 15%;
+                height: auto;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+}

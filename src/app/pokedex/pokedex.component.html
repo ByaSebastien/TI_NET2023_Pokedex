@@ -1,0 +1,22 @@
+<div class="pokedex" *ngIf="pokemonResult">
+    <div *ngIf="currentPokemon" class="pokemonCard">
+        <h2>{{currentPokemon.name}}</h2>
+        <img [src]="currentPokemon.sprites.front_shiny">
+        <p>Height : {{currentPokemon.height}}</p>
+        <p>Weight : {{currentPokemon.weight}}</p>
+    </div>
+    <div *ngIf="!currentPokemon" class="pokemonCard">
+        <h2>POKEMON</h2>
+        <img src="https://66.media.tumblr.com/tumblr_mai132OrFS1rfjowdo1_500.gif">
+    </div>
+    <ul class="pokemonList">
+        <li *ngFor="let pokemon of pokemonResult?.results">
+            <p (click)="getOne(pokemon.url)">{{pokemon.name}}</p>
+            <img [src]="pokemon.sprite">
+        </li>
+    </ul>
+    <div class="buttons">
+        <button [disabled]="!pokemonResult.previous" (click)="previous()">🔼</button>
+        <button [disabled]="!pokemonResult.next" (click)="next()">🔽</button>
+    </div>
+</div>
